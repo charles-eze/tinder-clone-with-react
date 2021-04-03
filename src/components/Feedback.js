@@ -1,91 +1,69 @@
 import React from 'react';
-import makeCarousel from 'react-reveal/makeCarousel';
-import Slide from 'react-reveal/Slide';
-import styled, { css } from 'styled-components';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper.scss';
+import data from './data';
+import SwiperCore, { Autoplay } from 'swiper';
+import { GoQuote } from 'react-icons/go';
+
+SwiperCore.use([Autoplay]);
+
 
 function Feedback() {
-    const Container = styled.li`
-    
-    overflow: hidden;
 
-    `;
+    return (
+        <div>
+        <Swiper
+            className='hidden md:block'
+            spaceBetween={15}
+            autoplay={{delay: 4000, disableOnInteraction: false,}}
+            speed={200}
+            loop={true}
+            loopFillGroupWithBlank={true}
+            slidesPerView={3}
+            onSlideChange={() => console.log('slide change')}
+            onSwiper={(swiper) => console.log(swiper)} >
+            {data.map( user => (
+                <SwiperSlide key={user.id}>
+                    <div className='w-full h-full border border-gray-200 rounded-md mt-7 mb-16 shadow-md'>
+                        <ul className=''>
+                            <li className=''>
+                                <figure className='pl-7 font-sans pr-5'>
+                                    <figcaption className='pt-5 pb-2.5 text-lg text-gray-800 font-bold'>{user?.name}</figcaption>
+                                    <hr></hr>
+                                    <div className='absolute right-16 w-12 h-4 mr-0.5 -mt-3 z-50  bg-white'></div>
+                                    <GoQuote 
+                                        className='absolute font-bold -mt-10 right-4 text-5xl text-gray-200 z-30 bg-white' />                                
+                                    <blockquote className='pt-3 h-72  text-gray-600 leading-tight tracking-normal'>
+                                        <p>{user?.testimonial}</p>
+                                        <p className='mt-5'>{user?.testimonial2}</p>
+                                    </blockquote>
+                                </figure>
+                            </li> 
+                        </ul>
+                        
+                    </div>
 
-    const CarouselUI = ({ children }) => <Container>{children}</Container>;
-    const Carousel = makeCarousel(CarouselUI);
+                </SwiperSlide>
+            ))}   
+        </Swiper>
+        <Swiper
+            className=' md:hidden'
+            spaceBetween={20}
+            autoplay={{delay: 2500, disableOnInteraction: false,}}
+            slidesPerView={1}
+            onSlideChange={() => console.log('slide change')}
+            onSwiper={(swiper) => console.log(swiper)} >
+            {data.map( user => (
+                <SwiperSlide key={user.id}>
+                    <div>
+                        {user?.testimonial}
+                    </div>
 
-        return (
-        <Carousel defaultWait={1000}>
-            <ul className='flex'>
-                <Slide right>
-                    <li className='h-2/6 w-96 border border-gray-300 rounded-md m-3 shadow-xl'>
-                        <figure>
-                            <figcaption>{'Shannon & Julian'}</figcaption>
-                            <hr></hr>
-                            <blockquote className='p-7'>
-                                I was feeling lonely back in my hometown because most of my friends had started romantic relationships 
-                                while I was abroad. We both decided to download Tinder and see what happened. Without the app we may 
-                                have never met and embarked on this wild, wonderful journey. Thank you for bringing us and so many other 
-                                couples together around the world. I will forever be grateful.
-                            </blockquote>
-                        </figure>
-                    </li> 
-                </Slide>
-                <Slide right>
-                    <li className='h-2/6 w-96 border border-gray-300 rounded-md m-3 shadow-xl'>
-                        <figure>
-                            <figcaption>{'Shannon & Julian'}</figcaption>
-                            <hr></hr>
-                            <blockquote className='p-7'>
-                                I was feeling lonely back in my hometown because most of my friends had started romantic relationships 
-                                while I was abroad. We both decided to download Tinder and see what happened. Without the app we may 
-                                have never met and embarked on this wild, wonderful journey. Thank you for bringing us and so many other 
-                                couples together around the world. I will forever be grateful.
-                            </blockquote>
-                        </figure>
-                    </li>
-                </Slide>
-                <Slide right> 
-                    <li className='h-2/6 w-96 border border-gray-300 rounded-md m-3 shadow-xl'>
-                        <figure>
-                            <figcaption>{'Shannon & Julian'}</figcaption>
-                            <hr></hr>
-                            <blockquote className='p-7'>
-                                I was feeling lonely back in my hometown because most of my friends had started romantic relationships 
-                                while I was abroad. We both decided to download Tinder and see what happened. Without the app we may 
-                                have never met and embarked on this wild, wonderful journey. Thank you for bringing us and so many other 
-                                couples together around the world. I will forever be grateful.
-                            </blockquote>
-                        </figure>
-                    </li> 
-                </Slide>
-                <li className='h-2/6 w-96 border border-gray-300 rounded-md m-3 shadow-xl'>
-                    <figure>
-                        <figcaption>{'Shannon & Julian'}</figcaption>
-                        <hr></hr>
-                        <blockquote className='p-7'>
-                            I was feeling lonely back in my hometown because most of my friends had started romantic relationships 
-                            while I was abroad. We both decided to download Tinder and see what happened. Without the app we may 
-                            have never met and embarked on this wild, wonderful journey. Thank you for bringing us and so many other 
-                            couples together around the world. I will forever be grateful.
-                        </blockquote>
-                    </figure>
-                </li> 
-                <li className='h-2/6 w-96 border border-gray-300 rounded-md m-3 shadow-xl'>
-                    <figure>
-                        <figcaption>{'Shannon & Julian'}</figcaption>
-                        <hr></hr>
-                        <blockquote className='p-7'>
-                            I was feeling lonely back in my hometown because most of my friends had started romantic relationships 
-                            while I was abroad. We both decided to download Tinder and see what happened. Without the app we may 
-                            have never met and embarked on this wild, wonderful journey. Thank you for bringing us and so many other 
-                            couples together around the world. I will forever be grateful.
-                        </blockquote>
-                    </figure>
-                </li> 
-               
-            </ul>
-        </Carousel>
-    )
-}
+                </SwiperSlide>
+            ))}   
+        </Swiper>
+        </div>                                      
+    );
+};
 
 export default Feedback;

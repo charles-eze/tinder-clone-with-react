@@ -1,6 +1,6 @@
 import React from 'react';
 import Feedback from './Feedback';
-
+import Footer from './Footer';
 
 
 function Home() {
@@ -24,18 +24,13 @@ function Home() {
                     </buttton>
                     <p className='flex text-white items-end font-normal text-xs justify-end w-full mt-1 mb-4 mr-11 '>All photos are of models and used for illustrative purposes only</p>
                 </div>
-                <div className='relative bg-white'>
-                    <div className=' flex relative'>
-                        
-                    
-                                           
-                    </div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                <div className='relative bg-white pl-16 pr-14'>                        
+                    <Feedback />
                 </div>
-            </div>
+                <div className='bg-white px-16'>
+                    <Footer />
+                </div>
+            </div>     
         </div>
     )
 }

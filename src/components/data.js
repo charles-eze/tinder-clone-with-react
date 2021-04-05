@@ -24,12 +24,12 @@ const data = [
     },
     {
         id: 5,
-        name: "Victoria and Bayleigh Rodriquez ❤️",
+        name: "Victor and Rodr ❤️",
         testimonial: "THANK YOU for making it possible for me to meet my soulmate. Five minutes into our first conversation, my now-wife mentioned how we would have an amazing wedding.",
     },
     {
         id: 6,
-        name: "Ryan and Lindsey Walsh",
+        name: "Ryan and Lindsey ",
         testimonial: "...just gotten out of a bad breakup and created a Tinder account to keep my mind off the breakup. After about a week of talking, we decided to meet up at a local bar for drinks...we decided to tie the knot in an 18 person ceremony in New Jersey on June 27th 2020.",
     },
     {
@@ -59,7 +59,7 @@ const data = [
     },
     {
         id: 12,
-        name: "Sean & Marianna Polcha",
+        name: "Sean & Marianna ",
         testimonial: "I didn't think anything would ever come about from it, but one day I saw this stunning beauty come across the app. I Super Liked her, paying a dollar extra for the Super Like!",
     },
     {

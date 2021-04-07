@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Header from './components/Header';
 import Home from './components/Home';
+import MainApp from './components/MainApp';
 import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
@@ -10,10 +11,12 @@ function App() {
       
       <BrowserRouter>
       <ScrollToTop />
-      <Header />
-      <Home />
-      <Switch>       
-        {/* <Route component={ Login } path='/login' /> */}
+      <Switch> 
+        <Route component={ Home } path='/' exact >
+          <Header />
+          <Home />
+        </Route>
+        <Route component={  MainApp } path='/app' />
       </Switch>
     </BrowserRouter>
     </div>

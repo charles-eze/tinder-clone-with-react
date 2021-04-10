@@ -1,12 +1,19 @@
 import React from 'react';
+import SideBar from './SideBar';
 import MainHeader from './MainHeader';
 import TinderCards from './TinderCards';
+import SwipeButtons from './SwipeButtons';
 
 function MainApp() {
     return (
-        <div>
+        <div className='h-screen w-full'>
             <MainHeader />
-            <TinderCards />       
+            <SideBar />
+            <TinderCards />
+            <div className='md:hidden'>
+                <SwipeButtons  />
+            </div>
+                  
         </div>
     )
 }

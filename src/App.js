@@ -3,6 +3,9 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Header from './components/Header';
 import Home from './components/Home';
 import MainApp from './components/MainApp';
+import MainHeader from './components/MainHeader';
+import Messages from './components/Messages';
+import MessageScreen from './components/MessageScreen';
 import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
@@ -11,12 +14,22 @@ function App() {
       
       <BrowserRouter>
       <ScrollToTop />
-      <Switch> 
-        <Route component={ Home } path='/' exact >
+      <Switch>
+        <Route path='/chat/:tinderUser'>
+          <MainHeader chatScreen='/app' backButton='/chat' />
+          <MessageScreen />
+        </Route> 
+        <Route path='/chat'>
+          <MainHeader backButton='/app' />
+          <Messages />
+        </Route>
+        <Route path='/app' >     
+          <MainApp />
+        </Route>
+        <Route path='/' >
           <Header />
           <Home />
         </Route>
-        <Route component={  MainApp } path='/app' />
       </Switch>
     </BrowserRouter>
     </div>

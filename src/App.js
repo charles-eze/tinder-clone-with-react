@@ -23,7 +23,8 @@ function App() {
           <MainHeader backButton='/app' />
           <Messages />
         </Route>
-        <Route path='/app' >     
+        <Route path='/app'> 
+          <MainHeader homeButton='/'/> 
           <MainApp />
         </Route>
         <Route path='/' >

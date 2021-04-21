@@ -55,21 +55,22 @@ const MessageScreen = () => {
                 </div> 
                 )
             ))}
-            <div className='h-14'></div>
-            <form className='flex p-1.5 fixed bottom-0 w-full border-t border-solid border-gray-200 '>
-                <input 
-                    value={input}
-                    onChange={e => setInput(e.target.value)}
-                    style={{flex: 1}}
-                    className='p-2.5 focus:outline-none'
-                    type='text'
-                    placeholder='Type a message...' />
-                <button 
-                    onClick={handleSend}
-                    type='submit'
-                    className='border-none mr-5 px-4 bg-white font-bold focus:outline-none'
-                    style={{color: '#fe3d71'}}>SEND</button>
-            </form>
+            <div className='h-14 flex'>
+                <form className='flex  bottom-0 fixed w-full border-t border-solid border-gray-200'>
+                    <input 
+                        value={input}
+                        onChange={e => setInput(e.target.value)}
+                        style={{flex: 1}}
+                        className='p-2.5 focus:outline-none'
+                        type='text'
+                        placeholder='Type a message...' />
+                    <button 
+                        onClick={handleSend}
+                        type='submit'
+                        className='border-none w-16 h-14 right-0 bg-white font-bold focus:outline-none'
+                        style={{color: '#fe3d71'}}>SEND</button>
+                </form>
+            </div>
         
             
         </div>
